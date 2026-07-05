@@ -1,0 +1,120 @@
+/* Ensure html and body take up the full height and width of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;  /* Center content horizontally */
+  align-items: center;      /* Center content vertically */
+  background-image: url('https://marble.com/uploads/materials/946/1280X720/granite_Absolute-Black-Leather_NsBR9BNR45aapXifqLv3.jpg'); /* Default background image */
+  background-size: cover;  /* Ensures the image covers the entire page */
+  background-repeat: no-repeat;  /* Prevents the image from repeating */
+  background-position: center;  /* Centers the image */
+  transition: background-image 0.5s ease-in-out; /* Smooth transition */
+  font-family: Arial, sans-serif;
+  width: 100%;  /* Ensure full width coverage */
+}
+
+/* Adjust the hover effects for buttons */
+button {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: transparent; 
+  color: white;
+  transition: background-color 0.8s ease-in-out;
+  border: 2px solid black;
+}
+
+/* Hover effect for all buttons */
+button:hover {
+  background-color: black;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+/* Flexbox layout for centering content */
+#languagePage, #mainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Main page specific margin */
+#mainPage {
+  margin-top: 20px;
+  display: none;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 36px;
+  font-weight: 500;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  .svg-container {
+    width: 20px;
+    height: 20px;
+  }
+
+  > div {
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    &:first-child {
+      gap: 10px;
+    }
+    &:last-child {
+      gap: 24px;
+
+      > .active {
+        position: relative;
+        &:after {
+          bottom: -8px;
+          left: 0;
+          right: 0;
+          position: absolute;
+          content: "";
+          height: 3px;
+          border-radius: 99px;
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+#returnToLanguageSelector {
+    cursor: pointer;
+    color: purple; 
+    text-decoration: underline;
+}
